@@ -1,3 +1,5 @@
+import { Todo } from "./todo.class";
+
 export class TodoList{
 
 	constructor(){
@@ -46,5 +48,6 @@ export class TodoList{
 			JSON.parse(localStorage.getItem('todo')) : //si tiene valores en el localStorage se los asigno
 			[]; //sino lo inicializo
 		
+		this.todos = this.todos.map( obj => Todo.fromJson(obj));
 	}
 }
